@@ -1,6 +1,7 @@
 # V1Scale
 
 Scale represents a scaling request for a resource.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -10,6 +11,23 @@ Name | Type | Description | Notes
 **spec** | [**V1ScaleSpec**](V1ScaleSpec.md) |  | [optional] 
 **status** | [**V1ScaleStatus**](V1ScaleStatus.md) |  | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1_scale import V1Scale
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1Scale from a JSON string
+v1_scale_instance = V1Scale.from_json(json)
+# print the JSON string representation of the object
+print V1Scale.to_json()
+
+# convert the object into a dict
+v1_scale_dict = v1_scale_instance.to_dict()
+# create an instance of V1Scale from a dict
+v1_scale_form_dict = v1_scale.from_dict(v1_scale_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

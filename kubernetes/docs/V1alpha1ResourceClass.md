@@ -1,6 +1,7 @@
 # V1alpha1ResourceClass
 
 ResourceClass is used by administrators to influence how resources are allocated.  This is an alpha type and requires enabling the DynamicResourceAllocation feature gate.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -11,6 +12,23 @@ Name | Type | Description | Notes
 **parameters_ref** | [**V1alpha1ResourceClassParametersReference**](V1alpha1ResourceClassParametersReference.md) |  | [optional] 
 **suitable_nodes** | [**V1NodeSelector**](V1NodeSelector.md) |  | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1alpha1_resource_class import V1alpha1ResourceClass
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1alpha1ResourceClass from a JSON string
+v1alpha1_resource_class_instance = V1alpha1ResourceClass.from_json(json)
+# print the JSON string representation of the object
+print V1alpha1ResourceClass.to_json()
+
+# convert the object into a dict
+v1alpha1_resource_class_dict = v1alpha1_resource_class_instance.to_dict()
+# create an instance of V1alpha1ResourceClass from a dict
+v1alpha1_resource_class_form_dict = v1alpha1_resource_class.from_dict(v1alpha1_resource_class_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

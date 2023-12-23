@@ -1,6 +1,7 @@
 # V1alpha1ResourceClaim
 
 ResourceClaim describes which resources are needed by a resource consumer. Its status tracks whether the resource has been allocated and what the resulting attributes are.  This is an alpha type and requires enabling the DynamicResourceAllocation feature gate.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -10,6 +11,23 @@ Name | Type | Description | Notes
 **spec** | [**V1alpha1ResourceClaimSpec**](V1alpha1ResourceClaimSpec.md) |  | 
 **status** | [**V1alpha1ResourceClaimStatus**](V1alpha1ResourceClaimStatus.md) |  | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1alpha1_resource_claim import V1alpha1ResourceClaim
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1alpha1ResourceClaim from a JSON string
+v1alpha1_resource_claim_instance = V1alpha1ResourceClaim.from_json(json)
+# print the JSON string representation of the object
+print V1alpha1ResourceClaim.to_json()
+
+# convert the object into a dict
+v1alpha1_resource_claim_dict = v1alpha1_resource_claim_instance.to_dict()
+# create an instance of V1alpha1ResourceClaim from a dict
+v1alpha1_resource_claim_form_dict = v1alpha1_resource_claim.from_dict(v1alpha1_resource_claim_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

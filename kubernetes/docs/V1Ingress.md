@@ -1,6 +1,7 @@
 # V1Ingress
 
 Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An Ingress can be configured to give services externally-reachable urls, load balance traffic, terminate SSL, offer name based virtual hosting etc.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -10,6 +11,23 @@ Name | Type | Description | Notes
 **spec** | [**V1IngressSpec**](V1IngressSpec.md) |  | [optional] 
 **status** | [**V1IngressStatus**](V1IngressStatus.md) |  | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1_ingress import V1Ingress
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1Ingress from a JSON string
+v1_ingress_instance = V1Ingress.from_json(json)
+# print the JSON string representation of the object
+print V1Ingress.to_json()
+
+# convert the object into a dict
+v1_ingress_dict = v1_ingress_instance.to_dict()
+# create an instance of V1Ingress from a dict
+v1_ingress_form_dict = v1_ingress.from_dict(v1_ingress_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

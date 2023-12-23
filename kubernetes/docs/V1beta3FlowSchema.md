@@ -1,6 +1,7 @@
 # V1beta3FlowSchema
 
 FlowSchema defines the schema of a group of flows. Note that a flow is made up of a set of inbound API requests with similar attributes and is identified by a pair of strings: the name of the FlowSchema and a \"flow distinguisher\".
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -10,6 +11,23 @@ Name | Type | Description | Notes
 **spec** | [**V1beta3FlowSchemaSpec**](V1beta3FlowSchemaSpec.md) |  | [optional] 
 **status** | [**V1beta3FlowSchemaStatus**](V1beta3FlowSchemaStatus.md) |  | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1beta3_flow_schema import V1beta3FlowSchema
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1beta3FlowSchema from a JSON string
+v1beta3_flow_schema_instance = V1beta3FlowSchema.from_json(json)
+# print the JSON string representation of the object
+print V1beta3FlowSchema.to_json()
+
+# convert the object into a dict
+v1beta3_flow_schema_dict = v1beta3_flow_schema_instance.to_dict()
+# create an instance of V1beta3FlowSchema from a dict
+v1beta3_flow_schema_form_dict = v1beta3_flow_schema.from_dict(v1beta3_flow_schema_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

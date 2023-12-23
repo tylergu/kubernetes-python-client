@@ -1,6 +1,7 @@
 # V1beta2LimitedPriorityLevelConfiguration
 
 LimitedPriorityLevelConfiguration specifies how to handle requests that are subject to limits. It addresses two issues:   - How are requests for this priority level limited?   - What should be done with requests that exceed the limit?
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -9,6 +10,23 @@ Name | Type | Description | Notes
 **lendable_percent** | **int** | &#x60;lendablePercent&#x60; prescribes the fraction of the level&#39;s NominalCL that can be borrowed by other priority levels. The value of this field must be between 0 and 100, inclusive, and it defaults to 0. The number of seats that other levels can borrow from this level, known as this level&#39;s LendableConcurrencyLimit (LendableCL), is defined as follows.  LendableCL(i) &#x3D; round( NominalCL(i) * lendablePercent(i)/100.0 ) | [optional] 
 **limit_response** | [**V1beta2LimitResponse**](V1beta2LimitResponse.md) |  | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1beta2_limited_priority_level_configuration import V1beta2LimitedPriorityLevelConfiguration
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1beta2LimitedPriorityLevelConfiguration from a JSON string
+v1beta2_limited_priority_level_configuration_instance = V1beta2LimitedPriorityLevelConfiguration.from_json(json)
+# print the JSON string representation of the object
+print V1beta2LimitedPriorityLevelConfiguration.to_json()
+
+# convert the object into a dict
+v1beta2_limited_priority_level_configuration_dict = v1beta2_limited_priority_level_configuration_instance.to_dict()
+# create an instance of V1beta2LimitedPriorityLevelConfiguration from a dict
+v1beta2_limited_priority_level_configuration_form_dict = v1beta2_limited_priority_level_configuration.from_dict(v1beta2_limited_priority_level_configuration_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

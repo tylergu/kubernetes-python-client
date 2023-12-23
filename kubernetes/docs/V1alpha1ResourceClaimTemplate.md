@@ -1,6 +1,7 @@
 # V1alpha1ResourceClaimTemplate
 
 ResourceClaimTemplate is used to produce ResourceClaim objects.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -9,6 +10,23 @@ Name | Type | Description | Notes
 **metadata** | [**V1ObjectMeta**](V1ObjectMeta.md) |  | [optional] 
 **spec** | [**V1alpha1ResourceClaimTemplateSpec**](V1alpha1ResourceClaimTemplateSpec.md) |  | 
 
+## Example
+
+```python
+from kubernetes.client.models.v1alpha1_resource_claim_template import V1alpha1ResourceClaimTemplate
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1alpha1ResourceClaimTemplate from a JSON string
+v1alpha1_resource_claim_template_instance = V1alpha1ResourceClaimTemplate.from_json(json)
+# print the JSON string representation of the object
+print V1alpha1ResourceClaimTemplate.to_json()
+
+# convert the object into a dict
+v1alpha1_resource_claim_template_dict = v1alpha1_resource_claim_template_instance.to_dict()
+# create an instance of V1alpha1ResourceClaimTemplate from a dict
+v1alpha1_resource_claim_template_form_dict = v1alpha1_resource_claim_template.from_dict(v1alpha1_resource_claim_template_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -1,6 +1,7 @@
 # V1PersistentVolume
 
 PersistentVolume (PV) is a storage resource provisioned by an administrator. It is analogous to a node. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -10,6 +11,23 @@ Name | Type | Description | Notes
 **spec** | [**V1PersistentVolumeSpec**](V1PersistentVolumeSpec.md) |  | [optional] 
 **status** | [**V1PersistentVolumeStatus**](V1PersistentVolumeStatus.md) |  | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1_persistent_volume import V1PersistentVolume
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1PersistentVolume from a JSON string
+v1_persistent_volume_instance = V1PersistentVolume.from_json(json)
+# print the JSON string representation of the object
+print V1PersistentVolume.to_json()
+
+# convert the object into a dict
+v1_persistent_volume_dict = v1_persistent_volume_instance.to_dict()
+# create an instance of V1PersistentVolume from a dict
+v1_persistent_volume_form_dict = v1_persistent_volume.from_dict(v1_persistent_volume_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

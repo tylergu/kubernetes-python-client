@@ -1,6 +1,7 @@
 # V1VolumeAttachment
 
 VolumeAttachment captures the intent to attach or detach the specified volume to/from the specified node.  VolumeAttachment objects are non-namespaced.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -10,6 +11,23 @@ Name | Type | Description | Notes
 **spec** | [**V1VolumeAttachmentSpec**](V1VolumeAttachmentSpec.md) |  | 
 **status** | [**V1VolumeAttachmentStatus**](V1VolumeAttachmentStatus.md) |  | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1_volume_attachment import V1VolumeAttachment
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1VolumeAttachment from a JSON string
+v1_volume_attachment_instance = V1VolumeAttachment.from_json(json)
+# print the JSON string representation of the object
+print V1VolumeAttachment.to_json()
+
+# convert the object into a dict
+v1_volume_attachment_dict = v1_volume_attachment_instance.to_dict()
+# create an instance of V1VolumeAttachment from a dict
+v1_volume_attachment_form_dict = v1_volume_attachment.from_dict(v1_volume_attachment_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

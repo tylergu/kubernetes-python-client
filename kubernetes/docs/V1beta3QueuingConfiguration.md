@@ -1,6 +1,7 @@
 # V1beta3QueuingConfiguration
 
 QueuingConfiguration holds the configuration parameters for queuing
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -8,6 +9,23 @@ Name | Type | Description | Notes
 **queue_length_limit** | **int** | &#x60;queueLengthLimit&#x60; is the maximum number of requests allowed to be waiting in a given queue of this priority level at a time; excess requests are rejected.  This value must be positive.  If not specified, it will be defaulted to 50. | [optional] 
 **queues** | **int** | &#x60;queues&#x60; is the number of queues for this priority level. The queues exist independently at each apiserver. The value must be positive.  Setting it to 1 effectively precludes shufflesharding and thus makes the distinguisher method of associated flow schemas irrelevant.  This field has a default value of 64. | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1beta3_queuing_configuration import V1beta3QueuingConfiguration
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1beta3QueuingConfiguration from a JSON string
+v1beta3_queuing_configuration_instance = V1beta3QueuingConfiguration.from_json(json)
+# print the JSON string representation of the object
+print V1beta3QueuingConfiguration.to_json()
+
+# convert the object into a dict
+v1beta3_queuing_configuration_dict = v1beta3_queuing_configuration_instance.to_dict()
+# create an instance of V1beta3QueuingConfiguration from a dict
+v1beta3_queuing_configuration_form_dict = v1beta3_queuing_configuration.from_dict(v1beta3_queuing_configuration_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

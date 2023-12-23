@@ -22,7 +22,7 @@ set -o nounset
 set -o pipefail
 
 # The openapi-generator version used by this client
-export OPENAPI_GENERATOR_COMMIT="v4.3.0"
+export OPENAPI_GENERATOR_COMMIT="v7.1.0"
 
 SCRIPT_ROOT=$(dirname "${BASH_SOURCE}")
 CLIENT_ROOT="${SCRIPT_ROOT}/../kubernetes"
@@ -58,7 +58,7 @@ else
 fi
 
 echo ">>> Running python generator from the gen repo"
-"${GEN_ROOT}/openapi/python.sh" "${CLIENT_ROOT}" "${SETTING_FILE}" 
+USE_SINGLE_PARAMETER=true "${GEN_ROOT}/openapi/python.sh" "${CLIENT_ROOT}" "${SETTING_FILE}" 
 mv "${CLIENT_ROOT}/swagger.json" "${SCRIPT_ROOT}/swagger.json"
 
 echo ">>> updating version information..."

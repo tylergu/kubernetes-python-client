@@ -1,6 +1,7 @@
 # V1alpha1Validation
 
 Validation specifies the CEL expression which is used to apply the validation.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -8,6 +9,23 @@ Name | Type | Description | Notes
 **message** | **str** | Message represents the message displayed when validation fails. The message is required if the Expression contains line breaks. The message must not contain line breaks. If unset, the message is \&quot;failed rule: {Rule}\&quot;. e.g. \&quot;must be a URL with the host matching spec.host\&quot; If the Expression contains line breaks. Message is required. The message must not contain line breaks. If unset, the message is \&quot;failed Expression: {Expression}\&quot;. | [optional] 
 **reason** | **str** | Reason represents a machine-readable description of why this validation failed. If this is the first validation in the list to fail, this reason, as well as the corresponding HTTP response code, are used in the HTTP response to the kubernetes.client. The currently supported reasons are: \&quot;Unauthorized\&quot;, \&quot;Forbidden\&quot;, \&quot;Invalid\&quot;, \&quot;RequestEntityTooLarge\&quot;. If not set, StatusReasonInvalid is used in the response to the kubernetes.client. | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1alpha1_validation import V1alpha1Validation
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1alpha1Validation from a JSON string
+v1alpha1_validation_instance = V1alpha1Validation.from_json(json)
+# print the JSON string representation of the object
+print V1alpha1Validation.to_json()
+
+# convert the object into a dict
+v1alpha1_validation_dict = v1alpha1_validation_instance.to_dict()
+# create an instance of V1alpha1Validation from a dict
+v1alpha1_validation_form_dict = v1alpha1_validation.from_dict(v1alpha1_validation_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

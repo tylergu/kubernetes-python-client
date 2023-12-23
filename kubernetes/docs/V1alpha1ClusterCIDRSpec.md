@@ -1,6 +1,7 @@
 # V1alpha1ClusterCIDRSpec
 
 ClusterCIDRSpec defines the desired state of ClusterCIDR.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -9,6 +10,23 @@ Name | Type | Description | Notes
 **node_selector** | [**V1NodeSelector**](V1NodeSelector.md) |  | [optional] 
 **per_node_host_bits** | **int** | PerNodeHostBits defines the number of host bits to be configured per node. A subnet mask determines how much of the address is used for network bits and host bits. For example an IPv4 address of 192.168.0.0/24, splits the address into 24 bits for the network portion and 8 bits for the host portion. To allocate 256 IPs, set this field to 8 (a /24 mask for IPv4 or a /120 for IPv6). Minimum value is 4 (16 IPs). This field is immutable. | 
 
+## Example
+
+```python
+from kubernetes.client.models.v1alpha1_cluster_cidr_spec import V1alpha1ClusterCIDRSpec
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1alpha1ClusterCIDRSpec from a JSON string
+v1alpha1_cluster_cidr_spec_instance = V1alpha1ClusterCIDRSpec.from_json(json)
+# print the JSON string representation of the object
+print V1alpha1ClusterCIDRSpec.to_json()
+
+# convert the object into a dict
+v1alpha1_cluster_cidr_spec_dict = v1alpha1_cluster_cidr_spec_instance.to_dict()
+# create an instance of V1alpha1ClusterCIDRSpec from a dict
+v1alpha1_cluster_cidr_spec_form_dict = v1alpha1_cluster_cidr_spec.from_dict(v1alpha1_cluster_cidr_spec_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

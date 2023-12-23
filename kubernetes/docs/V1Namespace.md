@@ -1,6 +1,7 @@
 # V1Namespace
 
 Namespace provides a scope for Names. Use of multiple namespaces is optional.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -10,6 +11,23 @@ Name | Type | Description | Notes
 **spec** | [**V1NamespaceSpec**](V1NamespaceSpec.md) |  | [optional] 
 **status** | [**V1NamespaceStatus**](V1NamespaceStatus.md) |  | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1_namespace import V1Namespace
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1Namespace from a JSON string
+v1_namespace_instance = V1Namespace.from_json(json)
+# print the JSON string representation of the object
+print V1Namespace.to_json()
+
+# convert the object into a dict
+v1_namespace_dict = v1_namespace_instance.to_dict()
+# create an instance of V1Namespace from a dict
+v1_namespace_form_dict = v1_namespace.from_dict(v1_namespace_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -1,6 +1,7 @@
 # V1alpha1ClusterCIDR
 
 ClusterCIDR represents a single configuration for per-Node Pod CIDR allocations when the MultiCIDRRangeAllocator is enabled (see the config for kube-controller-manager).  A cluster may have any number of ClusterCIDR resources, all of which will be considered when allocating a CIDR for a Node.  A ClusterCIDR is eligible to be used for a given Node when the node selector matches the node in question and has free CIDRs to allocate.  In case of multiple matching ClusterCIDR resources, the allocator will attempt to break ties using internal heuristics, but any ClusterCIDR whose node selector matches the Node may be used.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -9,6 +10,23 @@ Name | Type | Description | Notes
 **metadata** | [**V1ObjectMeta**](V1ObjectMeta.md) |  | [optional] 
 **spec** | [**V1alpha1ClusterCIDRSpec**](V1alpha1ClusterCIDRSpec.md) |  | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1alpha1_cluster_cidr import V1alpha1ClusterCIDR
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1alpha1ClusterCIDR from a JSON string
+v1alpha1_cluster_cidr_instance = V1alpha1ClusterCIDR.from_json(json)
+# print the JSON string representation of the object
+print V1alpha1ClusterCIDR.to_json()
+
+# convert the object into a dict
+v1alpha1_cluster_cidr_dict = v1alpha1_cluster_cidr_instance.to_dict()
+# create an instance of V1alpha1ClusterCIDR from a dict
+v1alpha1_cluster_cidr_form_dict = v1alpha1_cluster_cidr.from_dict(v1alpha1_cluster_cidr_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 
