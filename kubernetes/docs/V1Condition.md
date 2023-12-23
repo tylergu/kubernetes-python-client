@@ -1,6 +1,7 @@
 # V1Condition
 
 Condition contains details for one aspect of the current state of this API Resource.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -11,6 +12,23 @@ Name | Type | Description | Notes
 **status** | **str** | status of the condition, one of True, False, Unknown. | 
 **type** | **str** | type of condition in CamelCase or in foo.example.com/CamelCase. | 
 
+## Example
+
+```python
+from kubernetes.client.models.v1_condition import V1Condition
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1Condition from a JSON string
+v1_condition_instance = V1Condition.from_json(json)
+# print the JSON string representation of the object
+print V1Condition.to_json()
+
+# convert the object into a dict
+v1_condition_dict = v1_condition_instance.to_dict()
+# create an instance of V1Condition from a dict
+v1_condition_form_dict = v1_condition.from_dict(v1_condition_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

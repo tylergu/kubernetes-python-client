@@ -1,6 +1,7 @@
 # V1ScaleIOPersistentVolumeSource
 
 ScaleIOPersistentVolumeSource represents a persistent ScaleIO volume
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -15,6 +16,23 @@ Name | Type | Description | Notes
 **system** | **str** | system is the name of the storage system as configured in ScaleIO. | 
 **volume_name** | **str** | volumeName is the name of a volume already created in the ScaleIO system that is associated with this volume source. | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1_scale_io_persistent_volume_source import V1ScaleIOPersistentVolumeSource
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1ScaleIOPersistentVolumeSource from a JSON string
+v1_scale_io_persistent_volume_source_instance = V1ScaleIOPersistentVolumeSource.from_json(json)
+# print the JSON string representation of the object
+print V1ScaleIOPersistentVolumeSource.to_json()
+
+# convert the object into a dict
+v1_scale_io_persistent_volume_source_dict = v1_scale_io_persistent_volume_source_instance.to_dict()
+# create an instance of V1ScaleIOPersistentVolumeSource from a dict
+v1_scale_io_persistent_volume_source_form_dict = v1_scale_io_persistent_volume_source.from_dict(v1_scale_io_persistent_volume_source_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

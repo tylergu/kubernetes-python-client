@@ -1,6 +1,7 @@
 # V1GCEPersistentDiskVolumeSource
 
 Represents a Persistent Disk resource in Google Compute Engine.  A GCE PD must exist before mounting to a container. The disk must also be in the same GCE project and zone as the kubelet. A GCE PD can only be mounted as read/write once or read-only many times. GCE PDs support ownership management and SELinux relabeling.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -9,6 +10,23 @@ Name | Type | Description | Notes
 **pd_name** | **str** | pdName is unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk | 
 **read_only** | **bool** | readOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1_gce_persistent_disk_volume_source import V1GCEPersistentDiskVolumeSource
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1GCEPersistentDiskVolumeSource from a JSON string
+v1_gce_persistent_disk_volume_source_instance = V1GCEPersistentDiskVolumeSource.from_json(json)
+# print the JSON string representation of the object
+print V1GCEPersistentDiskVolumeSource.to_json()
+
+# convert the object into a dict
+v1_gce_persistent_disk_volume_source_dict = v1_gce_persistent_disk_volume_source_instance.to_dict()
+# create an instance of V1GCEPersistentDiskVolumeSource from a dict
+v1_gce_persistent_disk_volume_source_form_dict = v1_gce_persistent_disk_volume_source.from_dict(v1_gce_persistent_disk_volume_source_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -1,6 +1,7 @@
 # V1LimitedPriorityLevelConfiguration
 
 LimitedPriorityLevelConfiguration specifies how to handle requests that are subject to limits. It addresses two issues:   - How are requests for this priority level limited?   - What should be done with requests that exceed the limit?
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -9,6 +10,23 @@ Name | Type | Description | Notes
 **limit_response** | [**V1LimitResponse**](V1LimitResponse.md) |  | [optional] 
 **nominal_concurrency_shares** | **int** | &#x60;nominalConcurrencyShares&#x60; (NCS) contributes to the computation of the NominalConcurrencyLimit (NominalCL) of this level. This is the number of execution seats available at this priority level. This is used both for requests dispatched from this priority level as well as requests dispatched from other priority levels borrowing seats from this level. The server&#39;s concurrency limit (ServerCL) is divided among the Limited priority levels in proportion to their NCS values:  NominalCL(i)  &#x3D; ceil( ServerCL * NCS(i) / sum_ncs ) sum_ncs &#x3D; sum[priority level k] NCS(k)  Bigger numbers mean a larger nominal concurrency limit, at the expense of every other priority level.  If not specified, this field defaults to a value of 30.  Setting this field to zero supports the construction of a \&quot;jail\&quot; for this priority level that is used to hold some request(s) | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1_limited_priority_level_configuration import V1LimitedPriorityLevelConfiguration
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1LimitedPriorityLevelConfiguration from a JSON string
+v1_limited_priority_level_configuration_instance = V1LimitedPriorityLevelConfiguration.from_json(json)
+# print the JSON string representation of the object
+print V1LimitedPriorityLevelConfiguration.to_json()
+
+# convert the object into a dict
+v1_limited_priority_level_configuration_dict = v1_limited_priority_level_configuration_instance.to_dict()
+# create an instance of V1LimitedPriorityLevelConfiguration from a dict
+v1_limited_priority_level_configuration_form_dict = v1_limited_priority_level_configuration.from_dict(v1_limited_priority_level_configuration_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

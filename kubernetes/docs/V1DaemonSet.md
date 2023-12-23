@@ -1,6 +1,7 @@
 # V1DaemonSet
 
 DaemonSet represents the configuration of a daemon set.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -10,6 +11,23 @@ Name | Type | Description | Notes
 **spec** | [**V1DaemonSetSpec**](V1DaemonSetSpec.md) |  | [optional] 
 **status** | [**V1DaemonSetStatus**](V1DaemonSetStatus.md) |  | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1_daemon_set import V1DaemonSet
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1DaemonSet from a JSON string
+v1_daemon_set_instance = V1DaemonSet.from_json(json)
+# print the JSON string representation of the object
+print V1DaemonSet.to_json()
+
+# convert the object into a dict
+v1_daemon_set_dict = v1_daemon_set_instance.to_dict()
+# create an instance of V1DaemonSet from a dict
+v1_daemon_set_form_dict = v1_daemon_set.from_dict(v1_daemon_set_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -1,6 +1,7 @@
 # V1alpha2ResourceClaimConsumerReference
 
 ResourceClaimConsumerReference contains enough information to let you locate the consumer of a ResourceClaim. The user must be a resource in the same namespace as the ResourceClaim.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -9,6 +10,23 @@ Name | Type | Description | Notes
 **resource** | **str** | Resource is the type of resource being referenced, for example \&quot;pods\&quot;. | 
 **uid** | **str** | UID identifies exactly one incarnation of the resource. | 
 
+## Example
+
+```python
+from kubernetes.client.models.v1alpha2_resource_claim_consumer_reference import V1alpha2ResourceClaimConsumerReference
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1alpha2ResourceClaimConsumerReference from a JSON string
+v1alpha2_resource_claim_consumer_reference_instance = V1alpha2ResourceClaimConsumerReference.from_json(json)
+# print the JSON string representation of the object
+print V1alpha2ResourceClaimConsumerReference.to_json()
+
+# convert the object into a dict
+v1alpha2_resource_claim_consumer_reference_dict = v1alpha2_resource_claim_consumer_reference_instance.to_dict()
+# create an instance of V1alpha2ResourceClaimConsumerReference from a dict
+v1alpha2_resource_claim_consumer_reference_form_dict = v1alpha2_resource_claim_consumer_reference.from_dict(v1alpha2_resource_claim_consumer_reference_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

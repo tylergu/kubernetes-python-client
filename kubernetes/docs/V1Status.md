@@ -1,6 +1,7 @@
 # V1Status
 
 Status is a return value for calls that don't return other objects.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -13,6 +14,23 @@ Name | Type | Description | Notes
 **reason** | **str** | A machine-readable description of why this operation is in the \&quot;Failure\&quot; status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it. | [optional] 
 **status** | **str** | Status of the operation. One of: \&quot;Success\&quot; or \&quot;Failure\&quot;. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1_status import V1Status
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1Status from a JSON string
+v1_status_instance = V1Status.from_json(json)
+# print the JSON string representation of the object
+print V1Status.to_json()
+
+# convert the object into a dict
+v1_status_dict = v1_status_instance.to_dict()
+# create an instance of V1Status from a dict
+v1_status_form_dict = v1_status.from_dict(v1_status_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

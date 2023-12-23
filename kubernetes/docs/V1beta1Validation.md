@@ -1,6 +1,7 @@
 # V1beta1Validation
 
 Validation specifies the CEL expression which is used to apply the validation.
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -9,6 +10,23 @@ Name | Type | Description | Notes
 **message_expression** | **str** | messageExpression declares a CEL expression that evaluates to the validation failure message that is returned when this rule fails. Since messageExpression is used as a failure message, it must evaluate to a string. If both message and messageExpression are present on a validation, then messageExpression will be used if validation fails. If messageExpression results in a runtime error, the runtime error is logged, and the validation failure message is produced as if the messageExpression field were unset. If messageExpression evaluates to an empty string, a string with only spaces, or a string that contains line breaks, then the validation failure message will also be produced as if the messageExpression field were unset, and the fact that messageExpression produced an empty string/string with only spaces/string with line breaks will be logged. messageExpression has access to all the same variables as the &#x60;expression&#x60; except for &#39;authorizer&#39; and &#39;authorizer.requestResource&#39;. Example: \&quot;object.x must be less than max (\&quot;+string(params.max)+\&quot;)\&quot; | [optional] 
 **reason** | **str** | Reason represents a machine-readable description of why this validation failed. If this is the first validation in the list to fail, this reason, as well as the corresponding HTTP response code, are used in the HTTP response to the kubernetes.client. The currently supported reasons are: \&quot;Unauthorized\&quot;, \&quot;Forbidden\&quot;, \&quot;Invalid\&quot;, \&quot;RequestEntityTooLarge\&quot;. If not set, StatusReasonInvalid is used in the response to the kubernetes.client. | [optional] 
 
+## Example
+
+```python
+from kubernetes.client.models.v1beta1_validation import V1beta1Validation
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of V1beta1Validation from a JSON string
+v1beta1_validation_instance = V1beta1Validation.from_json(json)
+# print the JSON string representation of the object
+print V1beta1Validation.to_json()
+
+# convert the object into a dict
+v1beta1_validation_dict = v1beta1_validation_instance.to_dict()
+# create an instance of V1beta1Validation from a dict
+v1beta1_validation_form_dict = v1beta1_validation.from_dict(v1beta1_validation_dict)
+```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

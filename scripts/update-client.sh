@@ -22,7 +22,7 @@ set -o nounset
 set -o pipefail
 
 # The openapi-generator version used by this client
-export OPENAPI_GENERATOR_COMMIT="v4.3.0"
+export OPENAPI_GENERATOR_COMMIT="v7.1.0"
 
 SCRIPT_ROOT=$(dirname "${BASH_SOURCE}")
 CLIENT_ROOT="${SCRIPT_ROOT}/../kubernetes"
@@ -59,7 +59,7 @@ else
 fi
 
 echo ">>> Running python generator from the gen repo"
-"${GEN_ROOT}/openapi/python.sh" "${CLIENT_ROOT}" "${SETTING_FILE}"
+USE_SINGLE_PARAMETER=true "${GEN_ROOT}/openapi/python.sh" "${CLIENT_ROOT}" "${SETTING_FILE}"
 mv "${CLIENT_ROOT}/swagger.json" "${SCRIPT_ROOT}/swagger.json"
 
 echo ">>> updating version information..."
@@ -72,7 +72,7 @@ sed -i'' "s,^DEVELOPMENT_STATUS = .*,DEVELOPMENT_STATUS = \\\"${DEVELOPMENT_STAT
 # first, this must be in gen repo not here
 # second, this should be ported to swagger-codegen
 echo ">>> patching client..."
-git apply "${SCRIPT_ROOT}/rest_client_patch.diff"
+#git apply "${SCRIPT_ROOT}/rest_client_patch.diff"
 # The fix this patch is trying to make is already in the upstream swagger-codegen
 # repo but it's not in the version we're using. We can remove this patch
 # once we upgrade to a version of swagger-codegen that includes it (version>= 6.6.0).
